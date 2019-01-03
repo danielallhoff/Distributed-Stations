@@ -4,7 +4,7 @@ Steps
 2-Start rmi registry using the policy:
 start rmiregistry -J-Djava.security.policy=registrar.policy -J-Djava.rmi.server.hostname=localhost rmiport(optional)
 
-3-Register the "Registro" object which makes the remotely register possible in same machine as the registry one.
+3-Register the "Registro" object in same machine as the registry one. It makes possible the remotely registration of stations.
 java -cp . -Djava.security.policy=registrar.policy Registro puerto(opcional)
 
 4-Register each station:

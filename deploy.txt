@@ -1,0 +1,17 @@
+Steps
+1-Compile interfaces and classes
+
+2-Start rmi registry using the policy:
+start rmiregistry -J-Djava.security.policy=registrar.policy -J-Djava.rmi.server.hostname=localhost rmiport(optional)
+
+3-Register the "Registro" object which makes the remotely register possible in same machine as the registry one.
+java -cp . -Djava.security.policy=registrar.policy Registro puerto(opcional)
+
+4-Register each station:
+java -cp . -Djava.security.policy=registrar.policy RMIStation(number of station) RMI_IP RMIport(optional: 1099 as default)
+
+5-Start Controller:
+java -cp . -Djava.security.policy=registrar.policy (port=x) (rmi=ipRMI:portRMI)
+
+6-Start HTTP Server:
+java -cp . -Djava.security.policy=registrar.policy (port=x) (threads=y) (controller=ipController:portController)
